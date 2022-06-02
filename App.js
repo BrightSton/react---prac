@@ -1,18 +1,22 @@
 import React from "react";
-import { Route } from "react-router-dom";
+import "./App.css";
 
-import Week from "./Week";
-import Average from "./Average";
+import Start from "./Start";
+import Card from "./Card";
+
+import { Route, Switch } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <Route path="/" exact>
-        <Week />
-      </Route>
-      <Route path="/average/:week_day" exact>
-        <Average />
-      </Route>
+      <Switch>
+        <Route path="/" exact>
+          <Start />
+        </Route>
+        <Route path="/card" exact>
+          <Card />
+        </Route>
+      </Switch>
     </div>
   );
 }
