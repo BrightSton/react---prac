@@ -1,11 +1,10 @@
-import { createStore, combineReducers, applyMiddleware, compose } from "redux";
-import cardBox from "./modules/cardBox";
-import thunk from "redux-thunk";
+import { createStore, combineReducers } from "redux";
 
-const middlewares = [thunk];
-const enhancer = applyMiddleware(...middlewares);
-const rootReducer = combineReducers({ cardBox });
+import notice from "./modules/notice";
 
-const store = createStore(rootReducer, enhancer);
+const rootReducer = combineReducers({ notice });
+
+const store = createStore(rootReducer);
+//rootReducer를 store에 넣어줌
 
 export default store;

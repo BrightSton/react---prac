@@ -1,22 +1,26 @@
 import React from "react";
 import "./App.css";
 
-import Start from "./Start";
-import Card from "./Card";
+import { Route, Routes } from "react-router-dom";
 
-import { Route, Switch } from "react-router-dom";
+import Main from "./pages/Main";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import Write from "./pages/Write";
+import Update from "./pages/Update";
+import Top from "./Top";
 
 function App() {
   return (
-    <div className="App">
-      <Switch>
-        <Route path="/" exact>
-          <Start />
-        </Route>
-        <Route path="/card" exact>
-          <Card />
-        </Route>
-      </Switch>
+    <div className="App" content="initial-scale=1, width=device-width">
+      <Top />
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/write" element={<Write />} />
+        <Route path="/update" element={<Update />}></Route>
+      </Routes>
     </div>
   );
 }
